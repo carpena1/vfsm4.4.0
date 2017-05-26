@@ -1,3 +1,4 @@
+.DS_Store
 Reichenberger2017_eqs
 src_uh/*.o
 src_vfsm/*.o

@@ -1,0 +1,55 @@
+File: output/841215.owq                               VFSMOD v4.3.2 01/2016
+ 
+ Parameters for Water Quality
+ -----------------------------------------
+                   Type of problem= Pesticide trapping (Sabbagh et al.,2009)
+        Partition coefficient (Kd)=    0.396000       L/Kg
+          % Clay in sediment (%CL)=   25.000000          %
+ ... Pesticide degradation requested
+    Pesticide half-life (Ln2/Kref)=   27.995000       days
+          Soil field capacity (FC)=    0.260000        (-)
+      Incoming pesticide mass (mi)=    6.097000      mg/m2
+      Mixing layer thickness (dml)=    2.000000         cm
+        No. of days between events=     3
+                                        day    T(C)  theta(-)
+                                        1   9.50000   0.26500
+                                        2   8.60000   0.26400
+                                        3   6.30000   0.26500
+
+ 
+ Outputs for Water Quality
+--------------------------
+   176.961 m3 = Runoff inflow
+   447.174 Kg = Sediment inflow
+   999.325    = Phase distribution, Fph
+    48.311 %  = Infiltration (dQ)
+    99.918 %  = Sediment reduction (dE)
+    43.243 %  = Runoff inflow reduction
+ 
+    63.868 %  = Pesticide reduction (dP)
+ 
+ Pesticide mass balance/degradation(IDG=1)
+--------------------------------------------------
+ Total mass in filter:
+ 
+   0.609700E+05 mg = Pesticide input (mi)
+   0.220298E+05 mg = Pesticide output (mo)
+   0.609002E+02 mg = Pesticide retained in filter, sediment-bonded (mf,sed)
+   0.426032E+01 mg = Pesticide retained in filter, mixing layer (mml)
+   0.651606E+02 mg = Pesticide surface residue at the end of this event (mres)
+   0.636253E+02 mg = Pesticide surface residue at next event (after degradation,  3 days)
+ 
+ Normalized values by source area:
+ 
+       10000.00 m^2  = Source Area (input)
+   0.609700E+01 mg/m2= Pesticide input (mi)
+   0.220298E+01 mg/m2= Pesticide output (mo)
+   0.609002E-02 mg/m2= Pesticide retained in filter, sediment-bonded (mf,sed)
+   0.426032E-03 mg/m2= Pesticide retained in filter, mixing layer (mml)
+   0.651606E-02 mg/m2= Pesticide surface residue at the end of the event (mres)
+   0.636253E-02 mg/m2= Pesticide surface residue at next event (after degradation,  3 days)
+ 
+ Pesticide mass partition for outflow
+ 
+   0.318349E-01 mg = Pesticide output in solid phase (mop)
+   0.220298E+05 mg = Pesticide output in liquid phase (mod)

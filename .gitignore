@@ -1,0 +1,8 @@
+Reichenberger2017_eqs
+src_uh/*.o
+src_vfsm/*.o
+src_vfsm/vfsm
+src_uh/uh
+uh
+vfsm
+

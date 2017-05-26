@@ -1,0 +1,118 @@
+Changes to v3.0.2
+------------------
+(2/2014)
+-Fixed bug in user table for 24-h hyetograph (jstype=5) (io.f and finput.f)
+
+Changes to v3.0.1
+------------------
+(2/2012)
+-Added user table for 24-h hyetograph
+
+Changes to v3.0.0
+------------------
+(10/2011)
+-Rewritten design storm functions (subroutine hyetograph.f)
+- User can now provide a cumulative 24 h hyetograph other than the standard  SCS curves. This is selected by setting storm type to 5 ("user") and providing a table of values for the curve. Notice that the cumulative curve  must be given between 0 and 24 hours (first and last pair must be (0,0) and (24,1)), and the cumulative rainfall is given in relative terms P/P24, i.e. from 0 to 1 over the 24 hours.
+- The hydrograph delay time is now calculated differently for storm types other than type II.
+ 
+Changes from v2.2.1 to v2.4
+----------------------------
+   11/10/03   Reordered Erosion ieroty 1=Williams, 2=Gleams
+                3=Foster to coincide with changes in Shell     
+   11/13/03   Fixed coef. on Type Ia - did not add new
+                hyet curves - rafa will do this
+
+Changes in v2.2.1 since version 2.2.0
+-----------------------------------
+(05/2003)
+- Fixed infiltration solution issue when initial F is 0. It was caused by the Newton-Raphson solution algorithm used in the Mein and Larson time implicit solution to the Green-Ampt equation. The solution will not take as a seed total infiltration F= 0.
+- Added work-around for problem found when compiling vfsm with the unix g77 (gcc v3.1) fortran compiler. There is a bug in the compiler by which local variables are not treated properly. This gave different (incorrect) results for the cumulative flows calculated in kwwrite.f (written in .ohy file) between code compiled with g77 and other compilers (including those in PC). The cumulative values are now declared in a common block to force them to be static.
+
+Changes in v2.2.0 since version 2.01
+-----------------------------------
+(05/2003)
+- Added exception check for when thetai=porosity that caused the model to fail when solving the Green-Ampt ecuation.
+- Added runoff mass balance in .osp file and better handling of runoff in an impermeable plane (Ks=0).
+- Increased decimals in osp file to improve resolution of Sensitivity Analysis graphs. 
+- Moved version up to match new public release of windows design version GUI (VFSMOD-W)                                             
+
+Changes in v2.01 since version 1.06
+------------------------------------
+(04/2003)
+- Modified grassed.f, step3.f and outmass.f to handle small sediment events
+- Several minor changes to integrate program with new design version GUI (VFSMOD-W)
+- Moved version up to match new windows design version GUI (VFSMOD-W)                                             
+
+Changes in v1.06 since version 1.05
+------------------------------------
+(03/2002)
+- Fixed problem when incoming sediment was 100% fine. This was caused by a line out of sequence in sediment filtration subroutine (step3.f). Fixed.
+- Changed affiliation of one of the authors. 
+
+Changes in v1.05 since version 1.04b
+------------------------------------
+(16/12/00)
+-New way of handling a sediment filled strip (grassed.f) . After this happens (NFUP=1), all the sediment inflow is routed to the outflow end (no deposition) and without stopping the simulation. This way the simulation summary (*.osm) now shows realistic trapping efficiencies and mass balance (outmass.f).
+
+(5/12/00)
+- Sediment trapping subroutine (step3.f) re-worked to avoid problems with equilibrium slope Se in some cases that led to NaNs.
+
+(20/10/00)
+- Output format for saturated hydraulic conductivity changed to exponential.
+
+Changes in v1.04b since version 1.04
+-----------------------------------
+(28/02/00)
+- Windows GUI to handle UH and VFSMOD programs now available. Both fortran codes modified to produce outputs suitable for the GUI.
+- Improved model outputs. New output files give more details on the simulations and a new output summary file summarizes filter performance (*.osp)
+- Updated and expanded documentation. The manual has been revised and now contains numerous new sections on model use, reference tables for inputs to use in the model, and new documentation on the UH utility. An on-line version of the manual can be found on the web site and a PDF version is included in the distribution files.
+
+(05/02/2000)
+-Modified output format (from fixed to exponential) to allow for printing of long simulations and large sediment and flow quantities in files input.f, kwwrite.f and outmass.f.
+
+Changes in v1.04 since version 1.03
+-----------------------------------
+(10/24/99)
+- Modified finput.f to accept project files (.lis or .prj).
+This enables the user to use any naming convention and
+directory structure for inputs and outputs. Documentation
+needs to be added to the User guide to illustrate this 
+method of inputting the files.
+
+(10/16/99)
+- Expanded Rain array to 200 to match uh. In inputs.f, fixed totalrain
+calculation so the array will not try to access index=i-1 at i=1,
+
+(08/09/99)
+- Event for which strip fills up are now handled differently. The new procedure is, after filter strip is filled up, to stop sediment deposition and short-circuit incoming sediment to the filter exit while keeping routing water. At the end of the simulation the final sediment trapping efficiency is calculated based on the sediment captured before filling the filter and the amount that passed through after that time.
+
+(3/28/99)
+- Preprocessing program UH now implemented. The program prepares inputs for VFSmod based on readily available hydrological and soils data (NRCS method). This program is used in design approach.
+
+Changes in v1.03 since version 1.02
+-----------------------------------
+(03/14/99)
+- Added Total rainfall (mm) for storm in the Storm parameters section in *.ohy and *.osm output files.
+
+(03/14/99)
+- Reworked finput subroutine to extend filename length to 25 characters
+- Documentation (both Frame and PDF) updated.
+
+(03/10/99)
+- File *.igr splitted in two: *.igr (vegetation characteristics) and *.isd (incoming sediment characteristics) for interfacing with "uh"
+
+(02/28/99)
+- New output summary file summarizing filter performance (*.osp). New info on source area (width and length) is requested from the user (file *.iro).
+- Minor fix on header of file *.osm (the version date was cut short).
+
+Changes in v1.02 since version 1.01
+-----------------------------------
+(09/14/98)
+- The user does not need to specify the finite element mesh in the *.ikw files. The information now needed is: 1) x-position for each of the segments in which the filter is divided; and 2) surface properties (n, So) for each segment. The model now chooses the nodes where the changes occur based on the total number of nodes selected by the user.
+
+- More detail information on surface properties is included in the output.
+
+- Some parameters little used or confusing have been eliminated (IOUT and others).
+
+- The documentation has been enlarged and revised.
+

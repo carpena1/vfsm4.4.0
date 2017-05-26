@@ -1,0 +1,4 @@
+1			; Type of problem; 1=pesticide (Bayer)
+1	147.	30.	; Kd proc.:0= Kd(L/Kg); 1=Koc (Koc L/Kg),%OC)
+40.			; %Clay content (in sediment?)
+0

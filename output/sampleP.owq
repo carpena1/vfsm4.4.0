@@ -1,0 +1,18 @@
+File: output/sampleP.owq                              VFSMOD v4.3.2 01/2016
+ 
+ Parameters for Water Quality
+ -----------------------------------------
+                   Type of problem= Pesticide trapping (Sabbagh et al.,2009)
+        Partition coefficient (Kd)=   44.100000       L/Kg
+          % Clay in sediment (%CL)=   40.000000          %
+ 
+ Outputs for Water Quality
+--------------------------
+     1.325 m3 = Runoff inflow
+    45.045 Kg = Sediment inflow
+     0.667    = Phase distribution, Fph
+    66.026 %  = Infiltration (dQ)
+    97.612 %  = Sediment reduction (dE)
+    44.424 %  = Runoff inflow reduction
+ 
+    74.366 %  = Pesticide reduction (dP)
